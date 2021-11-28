@@ -1,5 +1,7 @@
 package recipes.dto;
 
+import recipes.model.Recipe;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
@@ -25,6 +27,11 @@ public class RecipeDto {
         this(name, description, ingredients, directions);
         this.category = category;
         this.date = date;
+    }
+
+    public RecipeDto(Recipe recipe) {
+        this(recipe.getName(), recipe.getCategory(), recipe.getDate(), recipe.getDescription(),
+                recipe.getIngredients(), recipe.getDirections());
     }
 
     public String getCategory() {

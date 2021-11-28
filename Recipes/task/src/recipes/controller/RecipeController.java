@@ -25,11 +25,13 @@ public class RecipeController {
 
     private final RecipeService recipeService;
     private final UserService userService;
+    private final RecipeMapper mapper;
 
     @Autowired
-    public RecipeController(RecipeService recipeService, UserService userService) {
+    public RecipeController(RecipeService recipeService, UserService userService, RecipeMapper mapper) {
         this.recipeService = recipeService;
         this.userService = userService;
+        this.mapper = mapper;
     }
 
     @PostMapping("/api/recipe/new")
@@ -64,8 +66,7 @@ public class RecipeController {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
                 Recipe value = recipe.get();
-                return new ResponseEntity<>(new RecipeDto(value.getName(), value.getCategory(), value.getDate(),
-                        value.getDescription(), value.getIngredients(), value.getDirections()), HttpStatus.OK);
+                return new ResponseEntity<>(mapper.recipeToRecipeDto(value), HttpStatus.OK);
             }
         }
     }
