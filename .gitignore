@@ -1,0 +1,238 @@
+# Project exclude paths
+/.gradle/
+/Recipes/task/build/
+/Recipes/task/out/
+/Recipes/task/out/production/classes/
+/Topics/Builder/Builder/out/
+/Topics/Builder/Builder/out/production/classes/
+/Topics/Builder/Builder (1)/out/
+/Topics/Builder/Builder (1)/out/production/classes/
+/Topics/Builder/Geek Builder/out/
+/Topics/Builder/Geek Builder/out/production/classes/
+/Topics/Builder/Robot Builder/out/
+/Topics/Builder/Robot Builder/out/production/classes/
+/Topics/Builder/Subway Sandwich/out/
+/Topics/Builder/Subway Sandwich/out/production/classes/
+/Topics/Comparing dates and time/Is the date between the two other dates?/out/
+/Topics/Comparing dates and time/Is the date between the two other dates?/out/production/classes/
+/Topics/Comparing dates and time/The New Year is coming (or not)/out/
+/Topics/Comparing dates and time/The New Year is coming (or not)/out/production/classes/
+/Topics/Comparing dates and time/Theory/out/
+/Topics/Comparing dates and time/Theory/out/production/classes/
+/Topics/Constructor/Account/out/
+/Topics/Constructor/Account/out/production/classes/
+/Topics/Constructor/Book/out/
+/Topics/Constructor/Book/out/production/classes/
+/Topics/Constructor/User/out/
+/Topics/Constructor/User/out/production/classes/
+/Topics/Custom threads/Starting threads/out/
+/Topics/Custom threads/Starting threads/out/production/classes/
+/Topics/Custom threads/String processor/out/
+/Topics/Custom threads/String processor/out/production/classes/
+/Topics/Functional interfaces/A lambda expression with seven arguments/out/
+/Topics/Functional interfaces/A lambda expression with seven arguments/out/production/classes/
+/Topics/Functional interfaces/Ternary predicate/out/
+/Topics/Functional interfaces/Ternary predicate/out/production/classes/
+/Topics/Functional interfaces/Theory/out/
+/Topics/Functional interfaces/Theory/out/production/classes/
+/Topics/HashMap/Countries and capitals/out/
+/Topics/HashMap/Countries and capitals/out/production/classes/
+/Topics/HashMap/Theory/out/
+/Topics/HashMap/Theory/out/production/classes/
+/Topics/Integer types and operations/Arithmetic expression/out/
+/Topics/Integer types and operations/Arithmetic expression/out/production/classes/
+/Topics/Integer types and operations/Desks/out/
+/Topics/Integer types and operations/Desks/out/production/classes/
+/Topics/Integer types and operations/Difference of times/out/
+/Topics/Integer types and operations/Difference of times/out/production/classes/
+/Topics/Integer types and operations/First digit/out/
+/Topics/Integer types and operations/First digit/out/production/classes/
+/Topics/Integer types and operations/Reversing/out/
+/Topics/Integer types and operations/Reversing/out/production/classes/
+/Topics/Integer types and operations/Snail/out/
+/Topics/Integer types and operations/Snail/out/production/classes/
+/Topics/Integer types and operations/Squirrels and nuts/out/
+/Topics/Integer types and operations/Squirrels and nuts/out/production/classes/
+/Topics/Integer types and operations/Tens digit/out/
+/Topics/Integer types and operations/Tens digit/out/production/classes/
+/Topics/Integer types and operations/The sum of digits/out/
+/Topics/Integer types and operations/The sum of digits/out/production/classes/
+/Topics/Integer types and operations/Theory/out/
+/Topics/Integer types and operations/Theory/out/production/classes/
+/Topics/Lambda expressions/Apply function to all elements/out/
+/Topics/Lambda expressions/Apply function to all elements/out/production/classes/
+/Topics/Lambda expressions/Creating a closure/out/
+/Topics/Lambda expressions/Creating a closure/out/production/classes/
+/Topics/Lambda expressions/Expression closure/out/
+/Topics/Lambda expressions/Expression closure/out/production/classes/
+/Topics/Lambda expressions/Max of two integers/out/
+/Topics/Lambda expressions/Max of two integers/out/production/classes/
+/Topics/Lambda expressions/Next even number/out/
+/Topics/Lambda expressions/Next even number/out/production/classes/
+/Topics/Lambda expressions/Production of all numbers in the range/out/
+/Topics/Lambda expressions/Production of all numbers in the range/out/production/classes/
+/Topics/Lambda expressions/Theory/out/
+/Topics/Lambda expressions/Theory/out/production/classes/
+/Topics/LocalDate/2 weeks after/out/
+/Topics/LocalDate/2 weeks after/out/production/classes/
+/Topics/LocalDate/10 days before/out/
+/Topics/LocalDate/10 days before/out/production/classes/
+/Topics/LocalDate/30 years before and after/out/
+/Topics/LocalDate/30 years before and after/out/production/classes/
+/Topics/LocalDate/Convert numbers to days/out/
+/Topics/LocalDate/Convert numbers to days/out/production/classes/
+/Topics/LocalDate/Find all mondays/out/
+/Topics/LocalDate/Find all mondays/out/production/classes/
+/Topics/LocalDate/Getting information on a day/out/
+/Topics/LocalDate/Getting information on a day/out/production/classes/
+/Topics/LocalDate/Print dates of a year with an offset/out/
+/Topics/LocalDate/Print dates of a year with an offset/out/production/classes/
+/Topics/LocalDate/The first and the last day of a month/out/
+/Topics/LocalDate/The first and the last day of a month/out/production/classes/
+/Topics/LocalDate/The first day of a month or not/out/
+/Topics/LocalDate/The first day of a month or not/out/production/classes/
+/Topics/LocalDate/The last day of a month/out/
+/Topics/LocalDate/The last day of a month/out/production/classes/
+/Topics/LocalDate/The n-th day from the end of a month/out/
+/Topics/LocalDate/The n-th day from the end of a month/out/production/classes/
+/Topics/LocalDate/Theory/out/
+/Topics/LocalDate/Theory/out/production/classes/
+/Topics/LocalDateTime/Add days and subtract hours/out/
+/Topics/LocalDateTime/Add days and subtract hours/out/production/classes/
+/Topics/LocalDateTime/Add 11 hours and print the date/out/
+/Topics/LocalDateTime/Add 11 hours and print the date/out/production/classes/
+/Topics/LocalDateTime/Adding N minutes/out/
+/Topics/LocalDateTime/Adding N minutes/out/production/classes/
+/Topics/LocalDateTime/Merging date-time instances/out/
+/Topics/LocalDateTime/Merging date-time instances/out/production/classes/
+/Topics/LocalDateTime/Subtracting hours and adding minutes/out/
+/Topics/LocalDateTime/Subtracting hours and adding minutes/out/production/classes/
+/Topics/LocalDateTime/The passed hours since the beginning of year/out/
+/Topics/LocalDateTime/The passed hours since the beginning of year/out/production/classes/
+/Topics/LocalDateTime/Theory/out/
+/Topics/LocalDateTime/Theory/out/production/classes/
+/Topics/LocalDateTime/Whole hours between two date-time pairs/out/
+/Topics/LocalDateTime/Whole hours between two date-time pairs/out/production/classes/
+/Topics/LocalTime/Return time without seconds/out/
+/Topics/LocalTime/Return time without seconds/out/production/classes/
+/Topics/LocalTime/Seconds between two time points/out/
+/Topics/LocalTime/Seconds between two time points/out/production/classes/
+/Topics/LocalTime/Seconds since start of a day/out/
+/Topics/LocalTime/Seconds since start of a day/out/production/classes/
+/Topics/LocalTime/Some hours and minutes ago/out/
+/Topics/LocalTime/Some hours and minutes ago/out/production/classes/
+/Topics/LocalTime/Theory/out/
+/Topics/LocalTime/Theory/out/production/classes/
+/Topics/Method references/Ascending and descending sorting/out/
+/Topics/Method references/Ascending and descending sorting/out/production/classes/
+/Topics/Method references/Theory/out/
+/Topics/Method references/Theory/out/production/classes/
+/Topics/Optional/Check an Optional value/out/
+/Topics/Optional/Check an Optional value/out/production/classes/
+/Topics/Optional/Create an Optional value/out/
+/Topics/Optional/Create an Optional value/out/production/classes/
+/Topics/Optional/Sum up optional values/out/
+/Topics/Optional/Sum up optional values/out/production/classes/
+/Topics/Optional/The address book/out/
+/Topics/Optional/The address book/out/production/classes/
+/Topics/Optional/Theory/out/
+/Topics/Optional/Theory/out/production/classes/
+/Topics/Posting and deleting data via REST/Deleting items/out/
+/Topics/Posting and deleting data via REST/Deleting items/out/production/classes/
+/Topics/Posting and deleting data via REST/Deleting items/out/test/classes/
+/Topics/Posting and deleting data via REST/Return query parameter/out/
+/Topics/Posting and deleting data via REST/Return query parameter/out/production/classes/
+/Topics/Posting and deleting data via REST/Return query parameter/out/test/classes/
+/Topics/Posting and deleting data via REST/Storing user names/out/
+/Topics/Posting and deleting data via REST/Storing user names/out/production/classes/
+/Topics/Posting and deleting data via REST/Storing user names/out/test/classes/
+/Topics/Posting and deleting data via REST/Theory/out/
+/Topics/Posting and deleting data via REST/Theory/out/production/classes/
+/Topics/Posting and deleting data via REST/Web calculator/build/
+/Topics/Posting and deleting data via REST/Web calculator/out/
+/Topics/Posting and deleting data via REST/Web calculator/out/production/classes/
+/Topics/Posting and deleting data via REST/Web calculator/out/test/classes/
+/Topics/Regexes in programs/Check IP address/out/
+/Topics/Regexes in programs/Check IP address/out/production/classes/
+/Topics/Regexes in programs/Check the clock time/out/
+/Topics/Regexes in programs/Check the clock time/out/production/classes/
+/Topics/Regexes in programs/Check the date/out/
+/Topics/Regexes in programs/Check the date/out/production/classes/
+/Topics/Regexes in programs/Illegal identifiers/out/
+/Topics/Regexes in programs/Illegal identifiers/out/production/classes/
+/Topics/Regexes in programs/Safe password/out/
+/Topics/Regexes in programs/Safe password/out/production/classes/
+/Topics/Regexes in programs/Theory/out/
+/Topics/Regexes in programs/Theory/out/production/classes/
+/Topics/Regexes in programs/Vehicle registration number/out/
+/Topics/Regexes in programs/Vehicle registration number/out/production/classes/
+/Topics/Standard functional interfaces/Accounts/out/
+/Topics/Standard functional interfaces/Accounts/out/production/classes/
+/Topics/Standard functional interfaces/An infinite numbers supplier/out/
+/Topics/Standard functional interfaces/An infinite numbers supplier/out/production/classes/
+/Topics/Standard functional interfaces/Ternary operator/out/
+/Topics/Standard functional interfaces/Ternary operator/out/production/classes/
+/Topics/Standard functional interfaces/Theory/out/
+/Topics/Standard functional interfaces/Theory/out/production/classes/
+/Topics/The for-loop/Arithmetic average/out/
+/Topics/The for-loop/Arithmetic average/out/production/classes/
+/Topics/The for-loop/Fizz Buzz/out/
+/Topics/The for-loop/Fizz Buzz/out/production/classes/
+/Topics/The for-loop/Numbers divisible by six/out/
+/Topics/The for-loop/Numbers divisible by six/out/production/classes/
+/Topics/The for-loop/Size of parts/out/
+/Topics/The for-loop/Size of parts/out/production/classes/
+/Topics/The for-loop/The count of numbers divisible by N/out/
+/Topics/The for-loop/The count of numbers divisible by N/out/production/classes/
+/Topics/The for-loop/The product of numbers from a to b/out/
+/Topics/The for-loop/The product of numbers from a to b/out/production/classes/
+/Topics/The for-loop/The roots of an equation/out/
+/Topics/The for-loop/The roots of an equation/out/production/classes/
+/Topics/The for-loop/Theory/out/
+/Topics/The for-loop/Theory/out/production/classes/
+/Topics/The Map interface/Creating a map/out/
+/Topics/The Map interface/Creating a map/out/production/classes/
+/Topics/The Map interface/Theory/out/
+/Topics/The Map interface/Theory/out/production/classes/
+/Topics/The Set interface/Creating a set/out/
+/Topics/The Set interface/Creating a set/out/production/classes/
+/Topics/The Set interface/Output elements/out/
+/Topics/The Set interface/Output elements/out/production/classes/
+/Topics/The Set interface/Removing elements/out/
+/Topics/The Set interface/Removing elements/out/production/classes/
+/Topics/The Set interface/Spell checker/out/
+/Topics/The Set interface/Spell checker/out/production/classes/
+/Topics/The Set interface/Strict superset/out/
+/Topics/The Set interface/Strict superset/out/production/classes/
+/Topics/The Set interface/Symmetric difference/out/
+/Topics/The Set interface/Symmetric difference/out/production/classes/
+/Topics/The Set interface/Theory/out/
+/Topics/The Set interface/Theory/out/production/classes/
+/Topics/The utility class Collections/Frequency of characters/out/
+/Topics/The utility class Collections/Frequency of characters/out/production/classes/
+/Topics/The utility class Collections/Multiple swaps/out/
+/Topics/The utility class Collections/Multiple swaps/out/production/classes/
+/Topics/The utility class Collections/Rotating table/out/
+/Topics/The utility class Collections/Rotating table/out/production/classes/
+/Topics/The utility class Collections/Sorting sequences/out/
+/Topics/The utility class Collections/Sorting sequences/out/production/classes/
+/Topics/The utility class Collections/The first index of a sublist/out/
+/Topics/The utility class Collections/The first index of a sublist/out/production/classes/
+/Topics/The utility class Collections/Theory/out/
+/Topics/The utility class Collections/Theory/out/production/classes/
+/Topics/The while and do-while loops/Profit/out/
+/Topics/The while and do-while loops/Profit/out/production/classes/
+/Topics/The while and do-while loops/The sum of elements/out/
+/Topics/The while and do-while loops/The sum of elements/out/production/classes/
+/Topics/The while and do-while loops/Theory/out/
+/Topics/The while and do-while loops/Theory/out/production/classes/
+/Topics/Thread management/Calculate the number of distinct characters/out/
+/Topics/Thread management/Calculate the number of distinct characters/out/production/classes/
+/Topics/Thread management/Summing with threads/out/
+/Topics/Thread management/Summing with threads/out/production/classes/
+/Topics/Thread management/VeganPizza/out/
+/Topics/Thread management/VeganPizza/out/production/classes/
+/Topics/toString()/Theory/out/
+/Topics/toString()/Theory/out/production/classes/
+/Topics/toString()/Users as strings/out/
+/Topics/toString()/Users as strings/out/production/classes/

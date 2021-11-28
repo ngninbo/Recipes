@@ -1,0 +1,26 @@
+content:
+- toString()
+- The Set interface
+- The Map interface
+- Regexes in programs
+- Posting and deleting data via REST
+- Constructor
+- Lambda expressions
+- Method references
+- HashMap
+- Functional interfaces
+- Standard functional interfaces
+- Optional
+- The while and do-while loops
+- The for-loop
+- LocalDate
+- LocalTime
+- LocalDateTime
+- Comparing dates and time
+- Integer types and operations
+- The utility class Collections
+- Builder
+- Threads as objects
+- Custom threads
+- Thread management
+- Thread synchronization
