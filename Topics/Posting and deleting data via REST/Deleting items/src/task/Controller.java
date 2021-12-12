@@ -22,6 +22,8 @@ public class Controller {
         return item != null ? item : ERROR;
     }
 
-    // Add your code below this line and do not change the code above the line.
-
+    @DeleteMapping("/items/{id}")
+    public String deleteItem(@PathVariable long id) {
+        return items.containsKey(id) ? items.remove(id) : ERROR;
+    }
 }

@@ -1317,9 +1317,6 @@ files:
 - name: src/recipes/controller/RegistrationController.java
   visible: true
   learner_created: true
-- name: src/recipes/persistance/Application1.java
-  visible: true
-  learner_created: true
 feedback_link: https://hyperskill.org/projects/180/stages/921/implement#comment
 status: Solved
 feedback:
