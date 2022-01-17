@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/529086/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: Sun, 12 Dec 2021 15:57:23 UTC
+update_date: Mon, 17 Jan 2022 10:06:56 UTC
 stages:
 - id: 917
   step: 13088
@@ -202,6 +202,12 @@ topics:
     theory_id: 13983
   - title: MVC
     theory_id: 17197
+  - title: 'Hashing: overview'
+    theory_id: 9831
+  - title: Hash function
+    theory_id: 10878
+  - title: Hash table
+    theory_id: 13054
   - title: Threads as objects
     theory_id: 4875
   - title: Custom threads
@@ -226,6 +232,10 @@ topics:
     theory_id: 3624
   - title: The List interface
     theory_id: 3581
+  - title: The Set interface
+    theory_id: 3575
+  - title: The Map interface
+    theory_id: 3558
   - title: Collections and thread-safety
     theory_id: 4984
   - title: Thread-safe maps
@@ -277,16 +287,6 @@ topics:
     theory_id: 8780
   - title: Interfaces
     theory_id: 9640
-  - title: 'Hashing: overview'
-    theory_id: 9831
-  - title: Hash function
-    theory_id: 10878
-  - title: Hash table
-    theory_id: 13054
-  - title: The Set interface
-    theory_id: 3575
-  - title: The Map interface
-    theory_id: 3558
   - title: HashMap
     theory_id: 12379
   2:
@@ -299,7 +299,7 @@ topics:
   - title: Introduction to JPA
     theory_id: 17125
   - title: JPA relationships
-    theory_id: 8936
+    theory_id: 17787
   - title: '@Bean vs @Component'
     theory_id: 14771
   - title: Bean validation

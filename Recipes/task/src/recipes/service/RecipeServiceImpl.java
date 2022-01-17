@@ -29,11 +29,9 @@ public class RecipeServiceImpl implements RecipeService{
 
     @Override
     public Map<String, Long> save(Recipe recipeToSave) {
-        Map<String, Long> result = new HashMap<>();
         recipeToSave.setDate(LocalDateTime.now());
         Recipe recipe = recipeRepository.save(recipeToSave);
-        result.put("id", recipe.getId());
-        return result;
+        return Collections.singletonMap("id", recipe.getId());
     }
 
     @Override

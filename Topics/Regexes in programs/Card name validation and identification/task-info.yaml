@@ -27,9 +27,8 @@ files:
     }
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/16168#comment
-status: Failed
+status: Unchecked
 feedback:
-  message: |
-    Failed test #3 of 3. Wrong answer
-  time: Sun, 07 Nov 2021 20:20:33 UTC
+  message: 'Unexpected error: {"detail":"Not found."}'
+  time: Wed, 15 Dec 2021 08:21:10 UTC
 record: -1

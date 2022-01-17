@@ -5,9 +5,10 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../../../Topics/Regexes in programs/Card name validation and identification/src">
       <sourceFolder url="file://$MODULE_DIR$/../../../../../Topics/Regexes in programs/Card name validation and identification/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../../../Topics/Regexes in programs/Card name validation and identification/src/generated" isTestSource="false" generated="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.16" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.22" level="project" />
   </component>
 </module>
