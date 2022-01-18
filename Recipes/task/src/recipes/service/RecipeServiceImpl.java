@@ -9,6 +9,7 @@ import recipes.persistance.RecipeRepository;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class RecipeServiceImpl implements RecipeService{
@@ -23,7 +24,7 @@ public class RecipeServiceImpl implements RecipeService{
 
     @Override
     public List<RecipeDto> findAll() {
-        List<Recipe> recipes = (List<Recipe>) recipeRepository.findAll();
+        List<Recipe> recipes = recipeRepository.findAll();
         return recipeMapper.recipeListToRecipeDtoList(recipes);
     }
 

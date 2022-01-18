@@ -18,4 +18,5 @@ public interface RecipeRepository extends CrudRepository<Recipe, Long> {
             "       ORDER BY DATE DESC", nativeQuery = true)
     List<Recipe> findByCategoryIgnoreCaseOrderByDateDesc(String category);
     Optional<Recipe> findById(Long id);
+    List<Recipe> findAll();
 }
