@@ -63,9 +63,4 @@ public class RecipeServiceImpl implements RecipeService{
     public List<RecipeDto> searchByName(String name) {
         return recipeMapper.recipeListToRecipeDtoList(recipeRepository.findByNameIgnoreCaseOrderByDateDesc(name));
     }
-
-    @Override
-    public boolean isAuthor(Recipe recipe, String username) {
-        return recipe.getAuthor().getEmail().equalsIgnoreCase(username);
-    }
 }

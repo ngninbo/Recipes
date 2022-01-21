@@ -18,6 +18,8 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.BiFunction;
+import java.util.function.IntPredicate;
 
 @RestController
 @Validated
@@ -26,6 +28,8 @@ public class RecipeController {
     private final RecipeService recipeService;
     private final UserService userService;
     private final RecipeMapper mapper;
+    private final IntPredicate isNumberOfParamWrong = number -> number == 0 || number > 1;
+    private final BiFunction<String, String, Boolean> isAuthor = String::equals;
 
     @Autowired
     public RecipeController(RecipeService recipeService, UserService userService, RecipeMapper mapper) {
@@ -81,7 +85,7 @@ public class RecipeController {
             if (recipe.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
-                if (!recipeService.isAuthor(recipe.get(), userDetails.getUsername())) {
+                if (!isAuthor.apply(recipe.get().getAuthor().getEmail(), userDetails.getUsername())) {
                     return new ResponseEntity<>(HttpStatus.FORBIDDEN);
                 } else {
                     recipeService.deleteById(Long.parseLong(id));
@@ -102,7 +106,7 @@ public class RecipeController {
             if (recipeInRepo.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
-                if (!recipeService.isAuthor(recipeInRepo.get(), userDetails.getUsername())) {
+                if (!isAuthor.apply(recipeInRepo.get().getAuthor().getEmail(), userDetails.getUsername())) {
                     return new ResponseEntity<>(HttpStatus.FORBIDDEN);
                 } else {
                     Optional<User> user = userService.findByEmail(userDetails.getUsername());
@@ -122,12 +126,14 @@ public class RecipeController {
         } else {
             int numParams = params.entrySet().size();
 
-            if (numParams == 0 || numParams > 1) {
-                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-            } else if (params.containsKey("category")) {
-                return new ResponseEntity<>(recipeService.searchByCategory(params.get("category")), HttpStatus.OK);
-            } else if (params.containsKey("name")) {
-                return new ResponseEntity<>(recipeService.searchByName(params.get("name")), HttpStatus.OK);
+            if (isNumberOfParamWrong.negate().test(numParams)) {
+                if (params.containsKey("category")) {
+                    return new ResponseEntity<>(recipeService.searchByCategory(params.get("category")), HttpStatus.OK);
+                } else if (params.containsKey("name")) {
+                    return new ResponseEntity<>(recipeService.searchByName(params.get("name")), HttpStatus.OK);
+                } else {
+                    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+                }
             } else {
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }

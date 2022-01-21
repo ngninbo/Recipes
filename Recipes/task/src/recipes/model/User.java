@@ -14,10 +14,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
     private Long userId;
+
     @NotBlank
     @Email
     @Pattern(regexp = ".+@.+\\..+")
     private String email;
+
     @NotBlank
     @Size(min = 8)
     private String password;

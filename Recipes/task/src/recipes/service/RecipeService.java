@@ -16,5 +16,4 @@ public interface RecipeService {
     void update(Long id, Recipe recipe);
     List<RecipeDto> searchByCategory(String category);
     List<RecipeDto> searchByName(String name);
-    boolean isAuthor(Recipe recipe, String username);
 }

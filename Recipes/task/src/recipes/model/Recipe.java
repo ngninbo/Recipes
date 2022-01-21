@@ -17,20 +17,26 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
     private Long id;
+
     @NotBlank
     private String name;
+
     @NotBlank
     private String category;
+
     @CreationTimestamp
     private LocalDateTime date;
+
     @NotBlank
     private String description;
+
     @NotEmpty
     @Size(min = 1)
     @ElementCollection
     @Column(name = "ingredient")
     @CollectionTable(name = "recipe_ingredient", joinColumns = @JoinColumn(name = "id"))
     private List<String> ingredients;
+
     @NotEmpty
     @Size(min = 1)
     @ElementCollection
@@ -38,7 +44,7 @@ public class Recipe {
     @CollectionTable(name = "recipe_direction", joinColumns = @JoinColumn(name = "id"))
     private List<String> directions;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User author;
 
@@ -128,12 +134,18 @@ public class Recipe {
         if (this == o) return true;
         if (!(o instanceof Recipe)) return false;
         Recipe recipe = (Recipe) o;
-        return Objects.equals(getId(), recipe.getId()) && Objects.equals(getName(), recipe.getName()) && Objects.equals(getCategory(), recipe.getCategory()) && Objects.equals(getDate(), recipe.getDate()) && Objects.equals(getDescription(), recipe.getDescription()) && Objects.equals(getIngredients(), recipe.getIngredients()) && Objects.equals(getDirections(), recipe.getDirections()) && Objects.equals(getAuthor(), recipe.getAuthor());
+        return Objects.equals(getId(), recipe.getId()) && Objects.equals(getName(), recipe.getName()) &&
+                Objects.equals(getCategory(), recipe.getCategory()) && Objects.equals(getDate(), recipe.getDate()) &&
+                Objects.equals(getDescription(), recipe.getDescription()) &&
+                Objects.equals(getIngredients(), recipe.getIngredients()) &&
+                Objects.equals(getDirections(), recipe.getDirections()) &&
+                Objects.equals(getAuthor(), recipe.getAuthor());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getCategory(), getDate(), getDescription(), getIngredients(), getDirections(), getAuthor());
+        return Objects.hash(getId(), getName(), getCategory(),
+                getDate(), getDescription(), getIngredients(), getDirections(), getAuthor());
     }
 
     @Override
