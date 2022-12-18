@@ -1,19 +1,19 @@
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 class Main {
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
         LocalDate date = LocalDate.parse(scanner.nextLine());
         int offset = scanner.nextInt();
+        date.datesUntil(date.plusYears(1), Period.ofDays(offset))
+                .filter(isSameYear(date))
+                .forEach(System.out::println);
+    }
 
-        System.out.println(date);
-        LocalDate nextDate = date.plusDays(offset);
-
-        while (nextDate.getYear() == date.getYear()) {
-            System.out.println(nextDate);
-            nextDate = nextDate.plusDays(offset);
-        }
+    private static Predicate<LocalDate> isSameYear(LocalDate date) {
+        return d -> d.getYear() == date.getYear();
     }
 }

@@ -3,9 +3,8 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
-        LocalTime time = LocalTime.parse(scanner.nextLine());
-        System.out.println(time.withSecond(0));
+        String time = scanner.nextLine();
+        System.out.println(LocalTime.parse(time).withSecond(0));
     }
 }

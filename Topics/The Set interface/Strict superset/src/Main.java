@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Objects;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -8,10 +7,7 @@ public class Main {
 
     private static <T> boolean isStrictSuperset(Set<T> set1, Set<T> set2) {
         // write your code here
-        if (!Objects.equals(set1, set2)) {
-            return set2.containsAll(set1);
-        }
-        return false;
+        return !set2.equals(set1) && set2.containsAll(set1);
     }
 
     /* Please do not change the code below */

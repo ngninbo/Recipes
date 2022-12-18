@@ -1,43 +1,44 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 /**
  * ConcreteComponent - Geek.
-**/
+ **/
 class Geek {
 
-   private String type;
-   private List<String> languages;
-   private int experience;
+    private String type;
+    private List<String> languages;
+    private int experience;
 
-   public Geek(String type, List<String> languages, int experience) {
-       this.type = type;
-       this.languages = languages;
-       this.experience = experience;
-   }
+    public Geek(String type, List<String> languages, int experience) {
+        this.type = type;
+        this.languages = languages;
+        this.experience = experience;
+    }
 
     @Override
     public String toString() {
-        return "Type : " + type + "\n" + 
-               "Languages : " + languages + "\n" +
-               "Experience : " + experience + " years";
+        return "Type : " + type + "\n" + "Languages : " + languages + "\n" + "Experience : " + experience + " years";
     }
 
 }
 
 /**
  * Builder interface describe step of object creation.
-**/
+ **/
 interface Builder {
-    public void setType(String type);
-    public void setLanguages(List<String> languages);
-    public void setExperience(int experience);
+    void setType(String type);
+
+    void setLanguages(List<String> languages);
+
+    void setExperience(int experience);
 }
 
 /**
  * Concrete Builder build Geek component.
-**/
-class  GeekBuilder implements Builder {
+ **/
+class GeekBuilder implements Builder {
 
     private String type;
     private List<String> languages;
@@ -52,6 +53,7 @@ class  GeekBuilder implements Builder {
     public void setLanguages(List<String> languages) {
         this.languages = languages;
     }
+
     @Override
     public void setExperience(int experience) {
         this.experience = experience;
@@ -64,17 +66,20 @@ class  GeekBuilder implements Builder {
 }
 
 /**
-  * Builder Director.
-  */
+ * Builder Director.
+ */
 class GeekDirector {
+
+    private static final int ADMIN_EXPERIENCE = 10;
+
     public void buildAdmin(Builder builder) {
         builder.setType("Admin");
         ArrayList<String> languages = new ArrayList<>();
         languages.add("Perl");
         languages.add("PowerShell");
         builder.setLanguages(languages);
-        builder.setExperience(10);
-     }
+        builder.setExperience(ADMIN_EXPERIENCE);
+    }
 }
 
 class Main {
@@ -88,6 +93,5 @@ class Main {
         director.buildAdmin(builder);
         Geek geek = builder.getResult();
         System.out.println(geek);
-
     }
 }

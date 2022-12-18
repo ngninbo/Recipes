@@ -10,13 +10,24 @@ import java.util.stream.Collectors;
 @Component
 public class RecipeMapper {
 
-    public RecipeDto recipeToRecipeDto(Recipe recipe) {
-        return new RecipeDto(recipe);
+    /**
+     * Map Recipe entity to DTO
+     * @param recipe Recipe entity
+     * @return Recipe DTO
+     */
+    public RecipeDto toDto(Recipe recipe) {
+        return new RecipeDto(recipe.getName(), recipe.getCategory(), recipe.getDate(), recipe.getDescription(),
+                recipe.getIngredients(), recipe.getDirections());
     }
 
-    public List<RecipeDto> recipeListToRecipeDtoList(List<Recipe> recipes) {
+    /**
+     * Map Recipes entities to list of DTO
+     * @param recipes List of recipes
+     * @return List of Recipes DTO
+     */
+    public List<RecipeDto> toList(List<Recipe> recipes) {
         return recipes.stream()
-                .map(RecipeDto::new)
+                .map(this::toDto)
                 .collect(Collectors.toList());
     }
 }

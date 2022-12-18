@@ -1,22 +1,16 @@
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 class Main {
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
+        int lower = Integer.parseInt(scanner.nextLine());
+        int upper = Integer.parseInt(scanner.nextLine());
 
-        int lower = scanner.nextInt();
-        int upper = scanner.nextInt();
-        int count = 0;
-        int sum = 0;
-
-        for (int i = lower; i <= upper; i++) {
-            if (i % 3 == 0) {
-                sum += i;
-                count += 1;
-            }
-        }
-        double avg = (double) sum / count;
+        double avg = IntStream.rangeClosed(lower, upper)
+                .filter(i -> i % 3 == 0)
+                .mapToDouble(i -> (double) i)
+                .average().orElse(0);
 
         System.out.println(avg);
     }

@@ -1,27 +1,30 @@
 import java.util.Scanner;
+import java.util.function.IntPredicate;
+import java.util.stream.IntStream;
 
 class Main {
+
+    private static int a;
+    private static int b;
+    private static int c;
+    private static int d;
+    private static final int MIN = 0;
+    private static final int MAX = 1000;
+    private static final int DEGREE = 3;
+
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
+        a = Integer.parseInt(scanner.nextLine());
+        b = Integer.parseInt(scanner.nextLine());
+        c = Integer.parseInt(scanner.nextLine());
+        d = Integer.parseInt(scanner.nextLine());
 
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int c = scanner.nextInt();
-        int d = scanner.nextInt();
+        IntStream.rangeClosed(MIN, MAX)
+                .filter(i -> isRoot().test(i))
+                .forEach(System.out::println);
+    }
 
-        int numRoots = 0;
-        int maxRoots = 3;
-        int n = 1000;
-
-        for (int i = 0; i <= n; i++) {
-
-            int y = a * i * i * i + b * i * i + c * i + d;
-
-            if (y == 0 && numRoots < maxRoots) {
-                System.out.println(i);
-                numRoots += 1;
-            }
-        }
+    public static IntPredicate isRoot() {
+        return i -> a * Math.pow(i, DEGREE) + b * Math.pow(i, DEGREE - 1) + i * c + d == 0;
     }
 }

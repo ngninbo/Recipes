@@ -3,7 +3,7 @@
  <head></head>
  <body>
   <p>As you know, lambda expressions allow you to use code as data and pass it as a method's arguments. Another way to do it is to use method references. They are often even more readable than corresponding lambda expressions. Besides, method references force developers to decompose a program into a set of short methods with clear areas of responsibility.</p> 
-  <h5 style="text-align: center;">Make code clearer with method references</h5> 
+  <h5 id="make-code-clearer-with-method-references" style="text-align: center;">Make code clearer with method references</h5> 
   <p>By method reference, we mean a function that refers to a particular method via its name and can be invoked any time we need it. The base syntax of a method reference looks like this:</p> 
   <pre><code class="language-java">objectOrClass :: methodName</code></pre> 
   <p>where <code class="language-java">objectOrClass</code> can be a <strong>class name</strong> or a <strong>particular instance</strong> of a class.</p> 
@@ -29,7 +29,7 @@
    Note that we can refer to both standard and our custom methods using method references.
   </div>
   <p></p> 
-  <h5 style="text-align: center;">Kinds of method references</h5> 
+  <h5 id="kinds-of-method-references" style="text-align: center;">Kinds of method references</h5> 
   <p>It's possible to write method references to both static and instance (non-static) methods.</p> 
   <p>In general, there are four kinds of method references:</p> 
   <ul> 
@@ -94,7 +94,7 @@ converter.apply(200L); // the result is 200.0d</code></pre>
    More practical examples will be explored in the following topics. For now, it is enough to grasp the general idea and the syntax of method references.
   </div>
   <p></p> 
-  <h5>Conclusion</h5> 
+  <h5 id="conclusion">Conclusion</h5> 
   <p>You've learned a new way to create function objects by using method references. It has much in common with lambda expressions but allows writing more readable and decomposed code. At the end of this topic, you should memorize all four types of method references and be ready to use them in your programs when you need to convey a piece of code into some method.</p>
  </body>
 </html>

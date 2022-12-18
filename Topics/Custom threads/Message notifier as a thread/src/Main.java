@@ -1,20 +1,20 @@
+import java.util.stream.IntStream;
+
 class MessageNotifier extends Thread {
 
-    // write fields to store variables here
-    private final String msg;
+    private final String message;
     private final int repeats;
 
     public MessageNotifier(String msg, int repeats) {
-        // implement the constructor
-        this.msg = msg;
+        super();
+        this.message = msg;
         this.repeats = repeats;
     }
 
     @Override
     public void run() {
-        // implement the method to print the message stored in a field
-        for (int i = 0; i < this.repeats; i++) {
-            System.out.println(this.msg);
-        }
+        IntStream.range(0, repeats)
+                .mapToObj(i -> message)
+                .forEach(System.out::println);
     }
 }

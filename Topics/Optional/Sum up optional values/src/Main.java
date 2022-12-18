@@ -5,8 +5,13 @@ class Main {
     public static void main(String[] args) {
         ValueProvider provider = new ValueProvider();
         // use provider.getValues() to get List<Optional<Integer>>
-        List<Optional<Integer>> opts = provider.getValues();
-        int sum = opts.stream().filter(Optional::isPresent).mapToInt(Optional::get).sum();
+        int sum = provider.getValues()
+                .stream()
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .reduce(Integer::sum)
+                .orElse(0);
+
         System.out.println(sum);
     }
 }

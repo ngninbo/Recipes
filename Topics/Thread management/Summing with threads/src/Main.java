@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -19,9 +20,12 @@ public class Main {
 
         summator1.start();
         summator2.start();
+
+        summator1.join();
         summator2.join();
 
         long partialSum1 = summator1.getResult();
+
         long partialSum2 = summator2.getResult();
 
 
@@ -52,12 +56,7 @@ public class Main {
                 throw new RuntimeException("You must start a new thread!");
             }
 
-            long sum = 0;
-            for (int i = fromIncl; i <= toIncl; i++) {
-                sum += i;
-            }
-
-            result = sum;
+            result = IntStream.rangeClosed(fromIncl, toIncl).asLongStream().sum();
         }
 
         public long getResult() {

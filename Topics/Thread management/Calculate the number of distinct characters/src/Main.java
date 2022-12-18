@@ -3,6 +3,7 @@ import java.util.Arrays;
 
 public class Main {
 
+    public static final int SLEEP_TIMES = 2000;
     private static long mainThreadId = Thread.currentThread().getId();
 
     // Fix this method
@@ -13,6 +14,7 @@ public class Main {
         SlowStringProcessor processor = new SlowStringProcessor(str);
         processor.start();
         processor.join();
+
         System.out.println(processor.getNumberOfUniqueCharacters());
     }
 
@@ -23,6 +25,7 @@ public class Main {
         private volatile long numberOfUniqueCharacters = 0;
 
         public SlowStringProcessor(String s) {
+            super();
             this.s = s;
         }
 
@@ -36,7 +39,7 @@ public class Main {
             }
 
             try {
-                Thread.sleep(2000);
+                Thread.sleep(SLEEP_TIMES);
             } catch (Exception e) {
                 throw new RuntimeException("Do not interrupt the processor", e);
             }

@@ -67,24 +67,23 @@ class Sandwich {
 class TestDrive {
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
-        Sandwich.Builder builder = new Sandwich.Builder();
         /* Hello, which bun would like to? */
+        Sandwich.Builder builder = new Sandwich.Builder();
         String bun = scanner.nextLine();
-        builder.addBun(bun);
         /* How much salad would like to add? */
+        builder.addBun(bun);
         int salad = Integer.parseInt(scanner.nextLine());
+        /* How much cheese would like to add? */
         builder.addSalad(salad);
-        /* How much cheese would like to add? */ 
         int cheese = Integer.parseInt(scanner.nextLine());
-        builder.addCheese(cheese);
         /* How much cucumber would like to add? */
+        builder.addCheese(cheese);
         int cucumber = Integer.parseInt(scanner.nextLine());
-        builder.addCucumber(cucumber);
         /* How much ham would like to add? */
+        builder.addCucumber(cucumber);
         int ham = scanner.nextInt();
         builder.addHam(ham);
-
-        Sandwich sandwich = builder.build(); /* write your code here */
+        Sandwich sandwich = builder.build();
 
         System.out.println(sandwich);
         scanner.close();

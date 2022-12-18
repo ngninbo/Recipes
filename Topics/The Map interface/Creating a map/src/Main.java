@@ -4,11 +4,7 @@ public class Main {
 
     public static void main(String[] args) {    
         // write your code here
-        Map<String, Integer> map = new TreeMap<>();
-        map.put("Omega", 24);
-        map.put("Alpha", 1);
-        map.put("Gamma", 3);
-
+        TreeMap<String, Integer> map = new TreeMap<>(Map.of("Omega", 24, "Alpha", 1, "Gamma", 3));
         System.out.println(map);
     }
 }

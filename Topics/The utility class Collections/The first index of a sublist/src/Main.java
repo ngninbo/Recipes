@@ -6,10 +6,11 @@ class Main {
     public static void main(String[] args) {
         // put your code here
         Scanner scanner = new Scanner(System.in);
-        List<String> list1 = List.of(scanner.nextLine().split("\\s"));
-        List<String> list2 = List.of(scanner.nextLine().split("\\s"));
+        List<String> list = List.of(scanner.nextLine().split("\\s+"));
+        List<String> sublist = List.of(scanner.nextLine().split("\\s+"));
+        System.out.printf("%s %s\n",
+                Collections.indexOfSubList(list, sublist),
+                Collections.lastIndexOfSubList(list, sublist));
 
-        System.out.print(Collections.indexOfSubList(list1, list2) + " ");
-        System.out.println(Collections.lastIndexOfSubList(list1, list2));
     }
 }

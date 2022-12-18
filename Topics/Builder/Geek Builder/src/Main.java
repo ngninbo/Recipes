@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,6 +10,30 @@ class Geek {
     Geek(String type, List<String> languages, int experience) {
         this.type = type;
         this.languages = languages;
+        this.experience = experience;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public List<String> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(List<String> languages) {
+        this.languages = languages;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
         this.experience = experience;
     }
 
@@ -52,16 +75,13 @@ class TestDrive {
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
         final String geekName = scanner.nextLine();
-        scanner.close();
+        final int geekAge = scanner.nextInt();
         System.out.println("Geek " + geekName + " created.");
 
         Geek geek = new Geek.GeekBuilder()
                 .setType("Admin")
-                .setLanguages(new ArrayList<>() {{
-                    add("Perl");
-                    add("PowerShell");
-                }})
-                .setExperience(10)
+                .setLanguages(List.of("Perl", "PowerShell"))
+                .setExperience(geekAge)
                 .build();
 
         System.out.println(geek);

@@ -1,29 +1,23 @@
 import java.util.*;
+import java.util.stream.IntStream;
 
 class Main {
     public static void main(String[] args) {
         // put your code here
-        Set<String> record = new LinkedHashSet<>();
         Scanner scanner = new Scanner(System.in);
         int d = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < d; i++) {
-            String word = scanner.nextLine();
-            record.add(word.toLowerCase());
-        }
+        Set<String> dictionary = new HashSet<>();
+        Set<String> words = new HashSet<>();
+
+        IntStream.range(0, d).forEach(i -> dictionary.add(scanner.nextLine().toLowerCase()));
 
         int l = Integer.parseInt(scanner.nextLine());
 
-        Set<String> erroneous = new HashSet<>();
+        IntStream.range(0, l)
+                .forEach(i -> words.addAll(List.of(scanner.nextLine().toLowerCase().split("\\s+"))));
 
-        for (int j = 0; j < l; j++) {
-            String[] word = scanner.nextLine().split(" ");
-            for (String s : word) {
-                if (!record.contains(s.toLowerCase())) {
-                    erroneous.add(s);
-                }
-            }
-        }
-
-        erroneous.forEach(System.out::println);
+        words.stream()
+                .filter(s -> !dictionary.contains(s))
+                .forEach(System.out::println);
     }
 }

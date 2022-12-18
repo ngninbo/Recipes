@@ -1,19 +1,18 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 class Main {
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
         int year = scanner.nextInt();
-        List<Integer> days = new ArrayList<>();
+        final int numOfDays = 3;
+        List<Integer> inputs = IntStream.range(0, numOfDays)
+                .mapToObj(i -> scanner.nextInt())
+                .collect(Collectors.toList());
 
-        for (int i = 0; i < 3; i++) {
-            days.add(scanner.nextInt());
-        }
-
-        days.forEach(day -> System.out.println(LocalDate.ofYearDay(year, day)));
+        inputs.forEach(dayOfYear -> System.out.println(LocalDate.ofYearDay(year, dayOfYear)));
     }
 }

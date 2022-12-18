@@ -1,24 +1,22 @@
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Scanner;
+import java.util.function.Predicate;
+import java.util.stream.IntStream;
 
 class Main {
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
         int year = scanner.nextInt();
         int month = scanner.nextInt();
-        LocalDate startDate = LocalDate.of(year, month, 1);
-        int numDay = startDate.lengthOfMonth();
-        LocalDate endDate = startDate.withDayOfMonth(numDay);
+        LocalDate date = LocalDate.of(year, month, 1);
 
-        for (LocalDate date = startDate; date.isBefore(endDate); date = date.plusDays(1)) {
-            if ("Monday".equalsIgnoreCase(date.getDayOfWeek().toString())) {
-                System.out.println(date);
-            }
-        }
+        IntStream.range(1, date.lengthOfMonth())
+                .mapToObj(date::withDayOfMonth)
+                .filter(isMonday())
+                .forEach(System.out::println);
+    }
 
-        int time = LocalTime.of(0, 0, 2).plusSeconds(6078).getSecond();
-        System.out.println(time);
+    private static Predicate<LocalDate> isMonday() {
+        return date -> date.getDayOfWeek().getValue() == 1;
     }
 }

@@ -2,7 +2,7 @@
 <html>
  <head></head>
  <body>
-  <h5 style="text-align: center;">Using default toString</h5> 
+  <h5 id="using-default-tostring" style="text-align: center;">Using default toString</h5> 
   <p>The root Java class <code class="language-java">Object</code> has the <code class="language-java">toString()</code> method to get the string representation of an object. If you'd like to have a string representation, override this method in your class.</p> 
   <p>First, let's consider an example based on the default <code class="language-java">toString()</code> implementation provided by the <code class="language-java">Object</code> class.</p> 
   <p>This is the <code class="language-java">Account</code> class. It has three fields and one constructor.</p> 
@@ -25,7 +25,7 @@
 
 String accString = account.toString(); // org.demo.example.Account@27082746</code></pre> 
   <p>A string like <code class="language-java">org.demo.example.Account@27082746</code> is not exactly what we would like to see. What we got here is the full class name and the hashcode of the object. This is the default behavior of the method <code class="language-java">toString()</code>.</p> 
-  <h5 style="text-align: center;">Overriding toString when declaring a class</h5> 
+  <h5 id="overriding-tostring-when-declaring-a-class" style="text-align: center;">Overriding toString when declaring a class</h5> 
   <p>If we want to include fields in the string representation of an object, we should override the standard behavior of the <code class="language-java">toString()</code> method.</p> 
   <p>Here is another version of the <code class="language-java">Account</code> class where we've overridden the <code class="language-java">toString()</code> method:</p> 
   <pre><code class="language-java">class Account {
@@ -59,7 +59,7 @@ System.out.println(account.toString());
 // option 2
 System.out.println(account);</code></pre> 
   <p>Some modern IDEs, such as <em>IntelliJ IDEA</em>, allow generating the overridden <code class="language-java">toString()</code> method automatically. This is very convenient if your class has a lot of fields.</p> 
-  <h5 style="text-align: center;">Overriding toString when subclassing</h5> 
+  <h5 id="overriding-tostring-when-subclassing" style="text-align: center;">Overriding toString when subclassing</h5> 
   <p>If you have a class hierarchy you can also override <code class="language-java">toString()</code>.</p> 
   <p>Here is a hierarchy of two classes:</p> 
   <ul> 
@@ -101,7 +101,7 @@ Employee employee = new Employee("Michael", 10_000);
 
 System.out.println(person);   // Person{name=Helena}
 System.out.println(employee); // Employee{name=Michael,salary=10000}</code></pre> 
-  <h5 style="text-align: center;">Possible problems when overriding toString</h5> 
+  <h5 id="possible-problems-when-overriding-tostring" style="text-align: center;">Possible problems when overriding toString</h5> 
   <p>Overriding the <code class="language-java">toString()</code> method so far looks very simple but what if your class has another class as a type of a field? Sometimes it may cause an error.</p> 
   <p>See the following example with <code class="language-java">Person</code> and <code class="language-java">Passport</code> classes. We do not include getters and setters in the code to make it more compact.</p> 
   <pre><code class="language-java">class Person {

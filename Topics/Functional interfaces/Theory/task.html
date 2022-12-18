@@ -3,7 +3,7 @@
  <head></head>
  <body>
   <p>In this topic, you will learn a new concept called <strong>functional interfaces</strong>. This is vital knowledge because these kinds of interfaces allow developers to use functional programming over the concepts from OOP and, in a sense, connect both these worlds together. It is functional interfaces that make it possible to use lambda expressions, method references, and other functional stuff. We suppose that you are already familiar with interfaces, lambda expressions, and anonymous classes. Now we are going to show you how they are all connected with each other.</p> 
-  <h5 style="text-align: center;">Functions and interfaces</h5> 
+  <h5 id="functions-and-interfaces" style="text-align: center;">Functions and interfaces</h5> 
   <p>If an interface contains only a<strong> single abstract method</strong> (such an interface sometimes is called a <strong>SAM type</strong>), it can be considered as a function. In addition to standard ways of implementing interfaces through inheritance or anonymous classes, these interfaces can be implemented by using a lambda expression or a method reference.</p> 
   <p>Here is a clone of the standard <code class="language-java">Function&lt;T, R&gt;</code> interface that demonstrates the basic idea:</p> 
   <pre><code class="language-java">@FunctionalInterface 
@@ -31,7 +31,7 @@ interface Func&lt;T, R&gt; {
     default void doNothingByDefault() { } 
 }</code></pre> 
   <p>This interface is a valid functional interface as well.</p> 
-  <h5 style="text-align: center;">Implementing functional interfaces</h5> 
+  <h5 id="implementing-functional-interfaces" style="text-align: center;">Implementing functional interfaces</h5> 
   <p>There are several ways to implement a functional interface. As you know from the previous OOP theory, it is impossible to directly create an instance of an interface. Then what should we do?</p> 
   <p>First of all, we should implement the interface to create a concrete class. Then, create an instance of this concrete class. The main requirement is to implement the <code class="language-java">apply</code> method to get a concrete behavior.</p> 
   <p>Let's consider three ways to do it.</p> 
@@ -62,12 +62,15 @@ long val = square.apply(10L); // the result is 100L</code></pre>
   </div>
   <p></p> 
   <p><strong>3) Method references.</strong></p> 
-  <p>Another way to implement a functional interface is by using method references. In this case, the signature of a method should match the signature of the single abstract method of a functional interface.</p> 
+  <p>Another way to implement a functional interface is by using method references. In this case, the number and type of arguments and the return type of a method should match the number and types of arguments and the return type of the single abstract method of a functional interface.</p> 
   <p>Suppose, there is a method <code class="language-java">square</code> that takes and returns a <code class="language-java">long</code> value:</p> 
-  <pre><code class="language-java">public static long square(long val) {
-    return val * val;
+  <pre><code class="language-java">class Functions {
+
+    public static long square(long val) {
+        return val * val;
+    }
 }</code></pre> 
-  <p>The signature of this method fits the <code class="language-java">Func&lt;Long, Long&gt;</code> functional interface. This means we can create a method reference and assign it to an object of the <code class="language-java">Func&lt;Long, Long&gt;</code> type:</p> 
+  <p>The argument and the return type of this method fits the <code class="language-java">Func&lt;Long, Long&gt;</code> functional interface. This means we can create a method reference and assign it to an object of the <code class="language-java">Func&lt;Long, Long&gt;</code> type:</p> 
   <pre><code class="language-java">Func&lt;Long, Long&gt; square = Functions::square;</code></pre> 
   <p>Keep in mind, that the compiler creates an intermediate hidden class that implements the <code class="language-java">Func&lt;Long, Long&gt;</code> interface in a similar way to the case of lambda expressions.</p> 
   <p></p>
@@ -75,7 +78,7 @@ long val = square.apply(10L); // the result is 100L</code></pre>
    Usually, method references are more readable than the corresponding lambda expressions. Try to prefer this way of implementing and instantiating functional interfaces when possible.
   </div>
   <p></p> 
-  <h5 style="text-align: center;">Conclusion</h5> 
+  <h5 id="conclusion" style="text-align: center;">Conclusion</h5> 
   <p>Here are the key points of this topic:</p> 
   <ul> 
    <li>a functional interface is a special kind of an interface containing a single abstract method, though it can also contain <code class="language-java">static</code> and <code class="language-java">default</code> methods;</li> 

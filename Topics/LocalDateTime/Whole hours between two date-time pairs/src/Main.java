@@ -4,11 +4,10 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
-        LocalDateTime firstDate = LocalDateTime.parse(scanner.nextLine());
-        LocalDateTime secondDate = LocalDateTime.parse(scanner.nextLine());
-
-        System.out.println(firstDate.until(secondDate, ChronoUnit.HOURS));
+        LocalDateTime start = LocalDateTime.parse(scanner.nextLine());
+        LocalDateTime end = LocalDateTime.parse(scanner.nextLine());
+        long hours = start.until(end, ChronoUnit.HOURS);
+        System.out.println(hours);
     }
 }

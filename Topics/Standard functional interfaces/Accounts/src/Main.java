@@ -7,9 +7,10 @@ import java.util.stream.Collectors;
 class Main {
 
     public static void printFilteredAccounts(List<Account> accounts) {
-        List<Account> nonEmptyAccounts = filter(accounts, account -> account.getBalance() > 0L);
-        List<Account> accountsWithTooMuchMoney = filter(accounts, account -> !account.isLocked() &&
-                account.getBalance() >= 100_000_000L);
+        final long max = 100_000_000;
+        List<Account> nonEmptyAccounts = filter(accounts, account -> account.getBalance() > 0);
+        List<Account> accountsWithTooMuchMoney = filter(accounts,
+                account -> !account.isLocked() && account.getBalance() >= max);
 
         // Don't change the code below
         nonEmptyAccounts.forEach(a -> System.out.print(a.getNumber() + " "));

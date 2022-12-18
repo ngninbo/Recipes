@@ -14,6 +14,6 @@ public interface RecipeService {
     Optional<Recipe> findById(Long id);
     void deleteById(Long id);
     void update(Long id, Recipe recipe);
-    List<RecipeDto> searchByCategory(String category);
-    List<RecipeDto> searchByName(String name);
+    List<RecipeDto> findByCategory(String category);
+    List<RecipeDto> findByName(String name);
 }

@@ -1,29 +1,22 @@
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 class Main {
     public static void main(String[] args) {
-
-        // put your code here
-        int shippable = 0;
-        int fixable = 0;
-        int rejected = 0;
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
+        int numOfParts = Integer.parseInt(scanner.nextLine());
 
-        for (int i = 0; i < n; i++) {
-            int sequence = scanner.nextInt();
-            if (sequence == 0) {
-                shippable++;
-            } else if (sequence == 1) {
-                fixable++;
-            } else {
-                rejected++;
-            }
-        }
+        List<Integer> sequenceOfIntegers =  IntStream.range(0, numOfParts)
+                .map( i -> Integer.parseInt(scanner.nextLine()))
+                .boxed()
+                .collect(Collectors.toList());
 
-        System.out.print(shippable + " ");
-        System.out.print(fixable + " ");
-        System.out.println(rejected);
+        long shipped = sequenceOfIntegers.stream().filter(integer -> integer == 0).count();
+        long fixed = sequenceOfIntegers.stream().filter(integer -> integer == 1).count();
+        long rejected = sequenceOfIntegers.stream().filter(integer -> integer == -1).count();
 
+        System.out.printf("%s %s %s\n", shipped, fixed, rejected);
     }
 }

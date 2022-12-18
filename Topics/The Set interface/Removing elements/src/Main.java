@@ -1,19 +1,18 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 class SetUtils {
 
+    private static final int UPPER = 10;
+
     public static Set<Integer> getSetFromString(String str) {
-        // write your code here
-        Set<Integer> set = new LinkedHashSet<>();
-        for (String s : str.split(" ")) {
-            set.add(Integer.parseInt(s));
-        }
-        return set;
+        return Arrays.stream(str.split("\\s+"))
+                .map(Integer::parseInt)
+                .collect(Collectors.toSet());
     }
 
     public static void removeAllNumbersGreaterThan10(Set<Integer> set) {
-        // write your code here
-        set.removeIf(value -> value > 10);
+        set.removeIf(i -> i > UPPER);
     }
 
 }

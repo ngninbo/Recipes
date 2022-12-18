@@ -3,12 +3,11 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
-        LocalDateTime dateTime = LocalDateTime.parse(scanner.next());
-        int plusDays = scanner.nextInt();
-        int minusHours = scanner.nextInt();
-
-        System.out.println(dateTime.plusDays(plusDays).minusHours(minusHours));
+        String[] inputs = scanner.nextLine().split(" ");
+        LocalDateTime dateTime = LocalDateTime.parse(inputs[0]);
+        System.out.println(dateTime
+                .plusDays(Long.parseLong(inputs[1]))
+                .minusHours(Long.parseLong(inputs[2])));
     }
 }

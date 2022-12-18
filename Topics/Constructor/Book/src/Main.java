@@ -1,9 +1,9 @@
-// write your class here
+
 class Book {
 
-    public String title;
-    public int yearOfPublishing;
-    public String[] authors;
+    String title;
+    int yearOfPublishing;
+    String[] authors;
 
     public Book(String title, int yearOfPublishing, String[] authors) {
         this.title = title;

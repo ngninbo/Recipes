@@ -27,8 +27,5 @@ files:
     }
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/16168#comment
-status: Unchecked
-feedback:
-  message: 'Unexpected error: {"detail":"Not found."}'
-  time: Wed, 15 Dec 2021 08:21:10 UTC
+status: Solved
 record: -1

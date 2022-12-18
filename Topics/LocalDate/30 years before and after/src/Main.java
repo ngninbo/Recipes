@@ -2,12 +2,13 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 class Main {
+
+    private static final int NUM_YEARS = 30;
+
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
         LocalDate date = LocalDate.parse(scanner.nextLine());
-        int comparator = 30;
-        System.out.println(date.minusYears(comparator));
-        System.out.println(date.plusYears(comparator));
+        System.out.println(date.minusYears(NUM_YEARS));
+        System.out.println(date.plusYears(NUM_YEARS));
     }
 }

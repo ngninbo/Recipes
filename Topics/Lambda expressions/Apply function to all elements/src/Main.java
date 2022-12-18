@@ -1,13 +1,13 @@
 import java.util.*;
 import java.util.function.*;
+import java.util.stream.IntStream;
 
 
 public class Main {
 
     public static <T> void applyFunction(T[] array, Function<T, T> func) {
-        for (int i = 0; i < array.length; i++) {
-            array[i] = func.apply(array[i]);
-        }
+        IntStream.range(0, array.length)
+                .forEach(i -> array[i] = func.apply(array[i]));
     }
 
     // do not change code below

@@ -70,7 +70,7 @@ public class RecipeController {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
                 Recipe value = recipe.get();
-                return new ResponseEntity<>(mapper.recipeToRecipeDto(value), HttpStatus.OK);
+                return new ResponseEntity<>(mapper.toDto(value), HttpStatus.OK);
             }
         }
     }
@@ -128,9 +128,9 @@ public class RecipeController {
 
             if (isNumberOfParamWrong.negate().test(numParams)) {
                 if (params.containsKey("category")) {
-                    return new ResponseEntity<>(recipeService.searchByCategory(params.get("category")), HttpStatus.OK);
+                    return new ResponseEntity<>(recipeService.findByCategory(params.get("category")), HttpStatus.OK);
                 } else if (params.containsKey("name")) {
-                    return new ResponseEntity<>(recipeService.searchByName(params.get("name")), HttpStatus.OK);
+                    return new ResponseEntity<>(recipeService.findByName(params.get("name")), HttpStatus.OK);
                 } else {
                     return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
                 }

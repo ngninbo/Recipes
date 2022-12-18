@@ -1,24 +1,32 @@
 import java.util.Scanner;
+import java.util.function.IntPredicate;
+import java.util.stream.IntStream;
 
 class Main {
+
+    public static final int FACTOR_THREE = 3;
+    public static final int FACTOR_FIVE = 5;
+
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
+        int lower = Integer.parseInt(scanner.next());
+        int upper = Integer.parseInt(scanner.next());
 
-        int lower = scanner.nextInt();
-        int upper = scanner.nextInt();
+        IntStream.rangeClosed(lower, upper)
+                .forEach(i -> {
+                    if (isMultiple(FACTOR_THREE).and(isMultiple(FACTOR_FIVE)).test(i)) {
+                        System.out.println("FizzBuzz");
+                    } else if (isMultiple(FACTOR_THREE).test(i)) {
+                        System.out.println("Fizz");
+                    } else if (isMultiple(FACTOR_FIVE).test(i)) {
+                        System.out.println("Buzz");
+                    } else {
+                        System.out.println(i);
+                    }
+                });
+    }
 
-        for (int i = lower; i <= upper; i++) {
-
-            if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println("FizzBuzz");
-            } else if (i%3 == 0) {
-                System.out.println("Fizz");
-            } else if (i % 5 == 0) {
-                System.out.println("Buzz");
-            } else {
-                System.out.println(i);
-            }
-        }
+    private static IntPredicate isMultiple(int n) {
+        return i -> i % n == 0;
     }
 }

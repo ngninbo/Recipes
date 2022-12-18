@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        // put your code here
+        final long days = 14;
         Scanner scanner = new Scanner(System.in);
         LocalDate date = LocalDate.parse(scanner.nextLine());
-        System.out.println(date.plusWeeks(2));
+        System.out.println(date.plusDays(days));
     }
 }

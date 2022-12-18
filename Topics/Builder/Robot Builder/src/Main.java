@@ -2,34 +2,31 @@ import java.util.Scanner;
 
 class Robot {
 
-    private final String CPU;
+    private String cpu;
     private int legs;
     private int hands;
     private int eyes;
 
-    private Robot(String CPU, int legs, int hands, int eyes) {
-        this.CPU = CPU;
+    Robot(String cpu, int legs, int hands, int eyes) {
+        this.cpu = cpu;
         this.legs = legs;
         this.hands = hands;
         this.eyes = eyes;
     }
 
+
+
     public static class RobotBuilder {
 
-        private String CPU;
+        /* write your code here (fields) */
+        private String cpu;
         private int legs;
         private int hands;
         private int eyes;
 
-        RobotBuilder() {
-
-        }
-
-        /* write your code here (fields) */
-
-        RobotBuilder setCPU(String cpu) {
+        RobotBuilder setCpu(String cpu) {
             /* write your code here */
-            this.CPU = cpu;
+            this.cpu = cpu;
             return this;
         }
 
@@ -53,13 +50,13 @@ class Robot {
 
         Robot build() {
             /* write your code here */
-            return new Robot(CPU, legs, hands, eyes);
+            return new Robot(cpu, legs, hands, eyes);
         }
     }
 
     @Override
     public String toString() {
-        return "CPU : " + CPU + "\n" +
+        return "CPU : " + cpu + "\n" +
                 "Legs : " + legs + "\n" +
                 "Hands : " + hands + "\n" +
                 "Eyes : " + eyes + "\n";
@@ -69,9 +66,9 @@ class Robot {
 class TestDrive {
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
-        final Robot.RobotBuilder robotBuilder = new Robot.RobotBuilder(); /* write your code here */
+        final Robot.RobotBuilder robotBuilder = new Robot.RobotBuilder();
         /* Set CPU */
-        robotBuilder.setCPU("Intel Core i5");
+        robotBuilder.setCpu("Intel Core i5");
         /* Would like to set legs? */
         int legs = scanner.nextInt();
         robotBuilder.setLegs(legs);
@@ -81,7 +78,8 @@ class TestDrive {
         /* Would like to set eyes? */
         int eyes = scanner.nextInt();
         robotBuilder.setEyes(eyes);
-        Robot robot = robotBuilder.build(); /* write your code here */
+
+        Robot robot = robotBuilder.build();
 
         System.out.println(robot);
         scanner.close();

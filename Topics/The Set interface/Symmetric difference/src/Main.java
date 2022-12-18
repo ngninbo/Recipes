@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 class SetUtils {
 
@@ -7,20 +8,14 @@ class SetUtils {
      */
     public static Set<String> symmetricDifference(Set<String> set1, Set<String> set2) {
         // write your code here
-        List<String> intersection = new ArrayList<>();
-        for (String s : set1) {
-            if (!set2.contains(s)) {
-                intersection.add(s);
-            }
-        }
+        Set<String> set =  new HashSet<>();
 
-        for (String s : set2) {
-            if (!set1.contains(s)) {
-                intersection.add(s);
-            }
-        }
+        set.addAll(set1);
+        set.addAll(set2);
 
-        return Set.of(intersection.toArray(new String[0]));
+        return set.stream()
+                .filter(s -> set1.contains(s) && !set2.contains(s) || set2.contains(s) && !set1.contains(s))
+                .collect(Collectors.toSet());
     }
 
 }

@@ -1,3 +1,4 @@
+
 class Pizza {
 
     //Fix this method
@@ -5,8 +6,8 @@ class Pizza {
         Base base = new Base();
         Tomatoes tomatoes = new Tomatoes();
         Tofu tofu = new Tofu();
+        tofu.join();
         Bake bake = new Bake();
-
         java.util.List<Thread> stepOfCook = new java.util.ArrayList<>();
         stepOfCook.add(base);
         stepOfCook.add(tomatoes);

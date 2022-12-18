@@ -3,12 +3,11 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
         int year = scanner.nextInt();
-        int numOfDay = scanner.nextInt();
-        LocalDate date = LocalDate.ofYearDay(year, numOfDay);
+        int numberOfDay = scanner.nextInt();
+        LocalDate date = LocalDate.ofYearDay(year, numberOfDay);
 
-        System.out.println(date.getDayOfMonth() == date.lengthOfMonth());
+        System.out.println(date.lengthOfMonth() == date.getDayOfMonth());
     }
 }

@@ -9,10 +9,7 @@ public class Main {
         int[] array = Arrays.stream(scanner.nextLine().split(" "))
                 .mapToInt(Integer::parseInt)
                 .toArray();
-        BiFunction<Integer, Integer, Integer> comparator;
-
-        // write your code here
-        comparator = isAscending ? Integer::min : Integer::max;
+        BiFunction<Integer, Integer, Integer> comparator = (a, b) -> isAscending ? Math.min(a, b) : Math.max(a, b);
 
         sort(array, comparator);
         Arrays.stream(array).forEach(e -> System.out.print(e + " "));

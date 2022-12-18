@@ -1,5 +1,6 @@
+
 class Predicate {
-    public static final TernaryIntPredicate ALL_DIFFERENT = (a, b, c) -> a != b && b != c && a != c;
+    public static final TernaryIntPredicate ALL_DIFFERENT = (a, b, c) -> a != b && b != c & a != c;
 
     @FunctionalInterface
     public interface TernaryIntPredicate {

@@ -1,17 +1,15 @@
-import java.util.*;
+import java.util.Scanner;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
-        // write your code here
         Scanner scanner = new Scanner(System.in);
         String password = scanner.nextLine();
-
-        System.out.println(isSafePassword(password) ? "YES" : "NO");
+        System.out.println(isSafe(password) ? "YES" : "NO");
     }
 
-    private static boolean isSafePassword(String password) {
+    private static boolean isSafe(String password) {
+        String regex = "^(?=.*[0-9]{1,})(?=.*[a-z]{1,})(?=.*[A-Z]{1,}).{12,}";
 
-        return password.matches(".{12,}") && password.matches(".*[A-Z]+.*") &&
-                password.matches(".*[a-z]+.*") && password.matches(".*\\d+.*");
+        return password.matches(regex);
     }
 }

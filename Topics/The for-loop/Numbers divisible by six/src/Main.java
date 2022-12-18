@@ -1,24 +1,24 @@
 import java.util.Scanner;
+import java.util.function.IntPredicate;
+import java.util.stream.IntStream;
 
 class Main {
+
+    public static final int FACTOR = 6;
+
     public static void main(String[] args) {
-        // put your code here
-        int sumNumberDivisibleBySix = 0;
-
         Scanner scanner = new Scanner(System.in);
+        int limit = Integer.parseInt(scanner.nextLine());
 
-        int numElement = scanner.nextInt();
+        long sum = IntStream.range(0, limit)
+                .map(i -> scanner.nextInt())
+                .filter(isMultiple())
+                .sum();
 
-        // int[] sequence = new int[numElement];
+        System.out.println(sum);
+    }
 
-        for (int i = 0; i < numElement; i++) {
-            // sequence[i] = scanner.nextInt();
-            int nextInt = scanner.nextInt();
-
-            if (nextInt % 6 == 0) {
-                sumNumberDivisibleBySix += nextInt;
-            }
-        }
-        System.out.println(sumNumberDivisibleBySix);
+    private static IntPredicate isMultiple() {
+        return i -> i % FACTOR == 0;
     }
 }

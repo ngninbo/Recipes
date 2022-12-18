@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
         Map<String, LocalTime> stores = new LinkedHashMap<>();
         int numStores = Integer.parseInt(scanner.nextLine());

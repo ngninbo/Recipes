@@ -1,9 +1,9 @@
 import java.time.LocalDateTime;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 class Main {
     public static void main(String[] args) {
-        // put your code here
         Scanner scanner = new Scanner(System.in);
         LocalDateTime startDateTime;
         LocalDateTime endDateTime;
@@ -15,16 +15,10 @@ class Main {
         endDateTime = upperDate.compareTo(lowerDate) > 0 ? upperDate : lowerDate;
 
         int numDateTime = Integer.parseInt(scanner.nextLine());
-        int numDateTimeInRange = 0;
-
-        int i = 0;
-        while (i < numDateTime) {
-            LocalDateTime dateTime = LocalDateTime.parse(scanner.nextLine());
-            if (dateTime.compareTo(startDateTime) >= 0 && dateTime.isBefore(endDateTime)) {
-                numDateTimeInRange++;
-            }
-            i++;
-        }
+        long numDateTimeInRange = IntStream.range(0, numDateTime)
+                .mapToObj(i -> LocalDateTime.parse(scanner.nextLine()))
+                .filter(dateTime -> dateTime.compareTo(startDateTime) >= 0 && dateTime.isBefore(endDateTime))
+                .count();
 
         System.out.println(numDateTimeInRange);
     }

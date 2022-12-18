@@ -14,10 +14,11 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
-public class RecipeServiceImpl implements RecipeService{
+public class RecipeServiceImpl implements RecipeService {
 
     private final RecipeRepository recipeRepository;
     private final RecipeMapper recipeMapper;
+
     @Autowired
     public RecipeServiceImpl(RecipeRepository recipeRepository, RecipeMapper recipeMapper) {
         this.recipeRepository = recipeRepository;
@@ -27,7 +28,7 @@ public class RecipeServiceImpl implements RecipeService{
     @Override
     public List<RecipeDto> findAll() {
         List<Recipe> recipes = recipeRepository.findAll();
-        return recipeMapper.recipeListToRecipeDtoList(recipes);
+        return recipeMapper.toList(recipes);
     }
 
     @Override
@@ -55,12 +56,12 @@ public class RecipeServiceImpl implements RecipeService{
     }
 
     @Override
-    public List<RecipeDto> searchByCategory(String category) {
-        return recipeMapper.recipeListToRecipeDtoList(recipeRepository.findByCategoryIgnoreCaseOrderByDateDesc(category));
+    public List<RecipeDto> findByCategory(String category) {
+        return recipeMapper.toList(recipeRepository.findByCategoryIgnoreCaseOrderByDateDesc(category));
     }
 
     @Override
-    public List<RecipeDto> searchByName(String name) {
-        return recipeMapper.recipeListToRecipeDtoList(recipeRepository.findByNameIgnoreCaseOrderByDateDesc(name));
+    public List<RecipeDto> findByName(String name) {
+        return recipeMapper.toList(recipeRepository.findByNameIgnoreCaseOrderByDateDesc(name));
     }
 }

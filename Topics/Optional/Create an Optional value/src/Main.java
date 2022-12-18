@@ -15,9 +15,8 @@ class Main {
 
 class InputStringReader {
     public Optional<String> getValue() {
-        // implement
         Scanner scanner = new Scanner(System.in);
-        String value = scanner.nextLine();
-        return !"empty".equals(value) ? Optional.of(value) : Optional.empty();
+        String input = scanner.nextLine();
+        return "empty".equals(input) ? Optional.empty() : Optional.of(input);
     }
 }

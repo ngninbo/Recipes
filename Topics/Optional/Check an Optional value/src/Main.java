@@ -4,8 +4,7 @@ class Main {
     public static void main(String[] args) {
         ValueProvider provider = new ValueProvider();
         // use provider.getValue() to get Optional<String>
-        Optional<String> value = provider.getValue();
-        value.ifPresent(System.out::println);
+        provider.getValue().ifPresent(System.out::println);
     }
 }
 

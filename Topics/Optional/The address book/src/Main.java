@@ -12,7 +12,11 @@ public class Main {
         Optional<String> optAddress = AddressBook.getAddressByName(name);
 
         // write your code here
-        System.out.println(optAddress.map(s -> name + " lives at " + s).orElse("Unknown"));
+        if (optAddress.isPresent()) {
+            System.out.printf("%s lives at %s\n", name, optAddress.get());
+        } else {
+            System.out.println("Unknown");
+        }
     }
 }
 

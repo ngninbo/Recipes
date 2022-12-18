@@ -4,16 +4,13 @@ import java.util.Scanner;
 public class Main {
 
     public static LocalDateTime merge(LocalDateTime dateTime1, LocalDateTime dateTime2) {
-        // write your code here
-        int maxYear = Math.max(dateTime1.getYear(), dateTime2.getYear());
-        int maxMonth = Math.max(dateTime1.getMonthValue(), dateTime2.getMonthValue());
-        int maxDay = Math.max(dateTime1.getDayOfMonth(), dateTime2.getDayOfMonth());
-        int maxHour = Math.max(dateTime1.getHour(), dateTime2.getHour());
-        int maxMin = Math.max(dateTime1.getMinute(), dateTime2.getMinute());
-        int maxSecond = Math.max(dateTime1.getSecond(), dateTime2.getSecond());
-        int maxNano = Math.max(dateTime1.getNano(), dateTime2.getNano());
-
-        return LocalDateTime.of(maxYear, maxMonth, maxDay, maxHour, maxMin, maxSecond, maxNano);
+        int maxYear = Math.max(dateTime2.getYear(), dateTime1.getYear());
+        int maxMonth = Math.max(dateTime2.getMonthValue(), dateTime1.getMonthValue());
+        int maxDay = Math.max(dateTime2.getDayOfMonth(), dateTime1.getDayOfMonth());
+        int maxHours = Math.max(dateTime1.getHour(), dateTime2.getHour());
+        int maxMinutes = Math.max(dateTime1.getMinute(), dateTime2.getMinute());
+        int maxSeconds = Math.max(dateTime1.getSecond(), dateTime2.getSecond());
+        return LocalDateTime.of(maxYear, maxMonth, maxDay, maxHours, maxMinutes, maxSeconds);
     }
 
     /* Do not change code below */
